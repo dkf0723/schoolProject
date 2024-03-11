@@ -1,0 +1,136 @@
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif,"微軟正黑體";
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url(../images/mountain2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
+
+  /* background-color: #e0f5fd; */
+}
+
+.all{
+  margin: auto;
+  width: 450px;
+  height: 600px;
+  border:3px white solid;
+  border-radius: 10px;
+  background-color: rgba(59, 59, 59, 0.096);
+}
+
+.user-logo{
+  margin: 35px auto;
+  width: 180px;
+  height: 180px;
+  background-color: rgb(179, 240, 248);
+  border-radius: 200px;
+  overflow: hidden;
+  position: relative;
+  background-image: url(../images/userlogo.jpg);
+  background-position: center;
+  background-size: 150%;
+}
+
+a:link{ 
+  color:rgb(255, 255, 255);
+  text-decoration:none;
+  font-size: 17px;
+  display: block;
+  margin-top:50px ;
+  font-weight: 600;
+}
+a:visited{color: white;}/*拜訪過後的超連結*/
+
+.form-signin {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+.search{
+  position: relative;
+}
+.search span{
+  text-align: right;
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/userlogo.jpg);
+  background-size: 70%;
+  background-position: center;
+  line-height: 30px;
+  
+}
+#floatingInput{
+  color: white ; 
+  background-color: rgba(255, 255, 255, 0.438); 
+  border: 2px white solid;
+  border-radius: 10px;
+  margin: 20px 0px;
+  height: 55px; 
+  font-size: 20px;
+}
+#floatingPassword{
+  color: white;
+  background-color: rgba(255, 255, 255, 0.438);
+  border: 2px white solid; 
+  border-radius: 10px;
+  margin: 20px 0px; 
+  height: 55px;
+  font-size: 20px;
+}
+#Submit{ 
+  background-color: white; 
+  color: black; border: none; 
+  border-radius: 7px; 
+  font-weight: 600;
+}
+#register{
+  border: 0px;
+  background-color:inherit;
+  font-weight:bolder;
+  color: white;
+  font-size: 20px;
+}

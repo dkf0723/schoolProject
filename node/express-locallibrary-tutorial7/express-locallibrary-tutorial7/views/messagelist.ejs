@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>message</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/msg.css">
+
+</head>
+
+<body>
+    <nav>
+        <form action="/login" method="get">
+            <input type="submit" name="logout" value="登出" class="logout" id="logout" >
+        </form>
+        <div class="username"><%= loginUser%></div>
+        <div class="Ouser"><span class="user"></span></div>
+        <h1 class="text-start"> 留言版</h1>
+    </nav>
+    <header>
+        <a href="#write"><input type="button" name="Submit" value="我要留言" class="questbtn" onclick="sendrequest()"
+                id="send" />
+        </a>
+    </header>
+    <div class="outcontent">
+        <ul id="content" class="content">
+            <% data.forEach(msg=>{ %>
+            <li class="msgContent left">
+                <div class="allhead">
+                    <div class="headleft"><span class="pic"></span><%= msg.email %></div>
+                    <% if(msg.author == loginUserid){ %>
+                    <div class="headmid"><a href="/msg/edit/<%= msg.id %>">[點我編輯]</a></div>
+                    <div class="headright"><a href="/msg/delete/<%= msg.id %>">[刪除]</a></div>
+                    <% } %>   
+                </div>
+                <div><%= msg.title %></div>
+                <div><%= msg.content %></div>
+                <div class="time"><span class="Bid">B<%= msg.id %></span>, 時間:<%= msg.lastupdatetime %></div>
+            </li>
+            <p style="clear: both;"></p>
+            <%})%>
+            <!-- <li class="msgContent right text-start">
+                <div><span class="picme"></span> username:</div>
+                <div>標題:xxxx</div>
+                <div>內容:xxxx</div>
+                <div class="time">時間:<span name="datetime"></span></div>
+            </li>
+            <p style="clear: both;"></p>
+            <li class="msgContent left">
+                <div> <span class="pic"></span>10946049:</div>
+                <div>標題:xxxx</div>
+                <div>內容:xxxx</div>
+                <div class="time">時間:<span name="datetime"></span></div>
+            </li>
+            <p style="clear: both;"></p> -->
+        </ul>
+        <div id="write">
+            <form action="/msg/create" method="post">
+                <textarea id="title" name="title" class="msgInput" placeholder="title"></textarea>
+                <textarea id="content" name="content" class="msgInputc" placeholder="content"></textarea>
+                <br>
+                <div class="outsendbtn">
+                    <input type="submit" class="sendbtn" value="發送">
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script>
+        var logout = document.getElementById("logout");
+        logout.onclick = function () {
+            alert("登出")
+        }
+    </script>
+    <br>
+</body>
+
+</html>

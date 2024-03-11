@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+    body {
+        background-image: url(/images/mountain2.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 620px;
+        margin: auto;
+
+    }
+    h1 {
+        font-weight: bolder;
+        font-size: 30px;
+        text-align: left;
+        float: left;
+        height: 50px;
+        overflow: hidden;
+        margin: 0;
+        line-height: 50px;
+    }
+    .head{
+        margin-top: 21px;
+        margin-bottom: 5px;
+        width: 620px;
+        height: 60px;
+    }
+    .user{
+    height: 50px;
+    width: 50px;
+    display: block;
+    border-radius: 25px;
+    background-image: url(/images/userlogo.jpg);
+    background-size: 150%;
+    background-position: center;
+    }
+    .Ouser {
+        float: right;
+        border-radius: 35px;
+        height: 50px;
+        width: 50px;
+        overflow: hidden;
+        border-radius: 25px;
+    }
+
+    .username {
+        float: right;
+        line-height: 50px;
+        margin-left: 8px;
+        margin-right: 5px;
+        font-size: 23px;
+        font-weight: bolder;
+    }
+
+    .Tleft{
+        display: block;
+        width: 620px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+        text-align: center;
+        background-color: rgb(49, 49, 167);
+        color: white;
+        font-weight: bold;
+        border-radius: 20px 20px 0 0;
+
+    }
+    .Cleft{
+        display: block;
+        width: 620px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        text-align: center;
+        background-color: rgb(49, 49, 167);
+        color: white;
+        font-weight: bold;
+        border-radius: 20px 20px 0 0;
+        margin-top: 40px;
+    }
+    .msgInput {
+        background-color: rgb(252, 247, 239);
+        border: none;
+        padding: 10px;
+        border-radius: 0 0 20px 20px;
+        display: block;
+        width: 600px;
+        height: 50px;
+        margin: 0px auto;
+        font-size: 16px;
+    }
+
+    .msgInputc {
+        background-color: rgb(252, 247, 239);
+        border: none;
+        padding: 10px;
+        border-radius:0 0 20px 20px;
+        display: block;
+        width: 600px;
+        height: 580px;
+        margin:0 auto;
+        font-size: 16px;
+    }
+
+    .sendbtn {
+        /* position: absolute;   */
+        width: 150px;
+        height: 35px;
+        margin: auto;
+        border: none;
+        border-radius: 20px;
+        font-size: 20px;
+        background-color: rgba(38, 51, 167, 0.952);
+        color: white;
+    }
+    .outsendbtn {
+        text-align: center;
+    }
+
+    </style>
+
+</head>
+<body>
+    <h1>編輯留言</h1>
+    <div class="head">
+        <div class="username"><%= loginUser%></div>
+        <div class="Ouser"><span class="user"></span></div> 
+    </div>
+    <form method="post">
+        <input type="hidden" name="id" value=<%= data.id%>>
+        <label for="title" class="Tleft">標題</label>
+        <textarea id="title" name="title" class="msgInput"><%= data.title%></textarea>
+        <label for="content" class="Cleft">內容</label>
+        <textarea id="content" name="content" class="msgInputc"><%= data.content%></textarea>
+        <br>
+        <div class="outsendbtn">
+            <input type="submit" class="sendbtn" value="發送">
+        </div>
+        <br>
+    </form>
+</body>
+</html>

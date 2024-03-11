@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>login</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/signin.css" rel="stylesheet">
+    <style>
+        h1{
+            font-weight: bolder;
+            font-family: '微軟正黑體';
+        }
+        .input{
+            float: left;
+            overflow: hidden;
+            font-family: '微軟正黑體';
+            font-size: 18px;
+            font-weight: bolder;
+            width: 80px;
+            height: 55px; 
+            line-height: 50px;
+            background-color: rgba(255, 255, 255, 0.438); 
+            border: 2px white solid;
+            border-radius: 10px 0 0 10px;
+            margin: 10px 0px;
+            text-align: center;
+            
+        }
+        .radio{
+            float: left;
+            overflow: hidden;
+            font-family: '微軟正黑體';
+            font-weight: bolder;
+            width: 20px;
+            height: 50px; 
+            line-height: 50px;
+            margin-left: 20px;
+        }
+        .radiolabel{
+            font-size: 20px;
+            float: left;
+            overflow: hidden;
+            font-family: '微軟正黑體';
+            font-weight: bolder;
+            height: 55px; 
+            line-height: 50px;
+            margin-left: 5px;
+        }
+        aside.allradio{
+            float: left;
+            overflow: hidden;
+            width: 290px;
+            height: 55px; 
+            line-height: 55px;
+            background-color: rgba(255, 255, 255, 0.438); 
+            border: 2px white solid;
+            border-left: none;
+            border-radius: 0 10px 10px 0;
+            margin: 10px 0px;
+            text-align: center;
+        }
+        #location{
+            width: 120px;
+            height: 30px;
+            text-align: center;
+        }
+        #regusername{
+            float: left;
+            color: white ; 
+            background-color: rgba(255, 255, 255, 0.438); 
+            border: 2px white solid;
+            border-left: none;
+            border-radius: 0 10px 10px 0;
+            margin: 10px 0px;
+            height: 55px; 
+            width: 290px;
+            font-size: 20px;
+        }
+        #regpassword{
+            float: left;
+            color: white ; 
+            background-color: rgba(255, 255, 255, 0.438); 
+            border: 2px white solid;
+            border-left: none;
+            border-radius: 0 10px 10px 0;
+            margin: 10px 0px;
+            height: 55px; 
+            width: 290px;
+            font-size: 20px;
+        }
+        #regpassword2{
+            float: left;
+            color: white ; 
+            background-color: rgba(255, 255, 255, 0.438); 
+            border: 2px white solid;
+            border-left: none;
+            border-radius: 0 10px 10px 0;
+            margin: 10px 0px;
+            height: 55px; 
+            width: 290px;
+            font-size: 20px;
+        }
+       
+    </style>
+</head>
+
+<body class="text-center">
+    <div class="all text-center">
+        <main class="form-signin">
+            <h1>註冊</h1>
+            <form action="/users/register" method="post">
+                <div class="search">
+                    <label for="regusername" class="input">帳號</label>
+                    <input type="email" class="form-control" id="regusername" name="regusername" placeholder="Account number" value="<%= name %>">
+                    
+                </div>
+                <div>
+                    <label for="regpassword" class="input">密碼</label>
+                    <input type="password" class="form-control" id="regpassword" name="regpassword" placeholder="Password" value="<%= pwd %>">
+                    
+                </div>
+                <div>
+                    <label for="regpassword2" class="input">確認密碼</label>
+                    <input type="password" class="form-control" id="regpassword2" name="regpassword2" placeholder="Confirm password" value="<%= pwd2 %>">
+                    
+                </div>
+                <div class="checkbox mb-3 text-start">
+                    <label class="input">學制</label> 
+                    <aside class="allradio">
+                        <input type="radio" id="abc1" class="radio" name="EducationalSystem" value="二技" checked>
+                        <label for="abc1" class="radiolabel" aria-checked="">二技</label>
+                        <input type="radio" id="abc2" class="radio" name="EducationalSystem" value="四技">
+                        <label for="abc2" class="radiolabel">四技</label>
+                        <input type="radio" id="abc3" class="radio" name="EducationalSystem" value="五專">
+                        <label for="abc3" class="radiolabel">五專</label>
+                    </aside>
+                </div>
+                <div>
+                    <label class="input" for='level' name='level'>年級</label> 
+                    <aside class="allradio">
+                        <select name="location" id="location"> 
+                            <option value="1">一</option>
+                            <option value="2">二</option>
+                            <option value="3">三</option>
+                            <option value="4">四</option>
+                            <option value="5">五</option>
+                        </select>
+                    </aside>
+                </div>
+                <input type="submit" name="Submit" id="Submit" value="註冊" class="w-100 btn btn-lg btn-primary " style="margin-top: 20px;"/>
+            </form>
+            <p style="color:red; font-size: 20px;"><%= error%></p>
+
+        </main> 
+    </div>
+    
+</body>
+
+</html>

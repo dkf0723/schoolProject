@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>login</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <div class="all text-center">
+        <main class="form-signin">
+            <form action="/login" method="post">
+                <div class="user-logo"></div>
+                <div class="search">
+                    <input type="text" class="form-control" id="floatingInput" name="account" placeholder="Account number" value="<%= account %>">
+                </div>
+                <div>
+                    <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" value="<%= password %>">
+                </div>
+                <div class="checkbox mb-3 text-start">
+                </div>
+                <input type="submit" name="Submit" id="Submit" value="登入" class="w-100 btn btn-lg btn-primary " />
+                <p></p>
+                <div style="color: red; font-weight: bolder;"><%= errorMessage %></div>
+            </form>
+            <form action="/users/register" method="get">
+                <div class=" text-start text-muted "><input type="submit"  name="register" id="register" class="register" value="立即註冊"></div>
+            </form>
+        </main>
+    </div>
+    <!-- <script>
+        function send() {
+            var account = document.getElementById("floatingInput");
+            var password = document.getElementById("floatingPassword");
+            if (account.value == "") {
+                alert("請輸入帳號")
+                return false;
+            }
+            if (password.value == "") {
+                alert("請輸入密碼")
+                return false;
+            }
+        }
+    </script> -->
+</body>
+
+</html>
